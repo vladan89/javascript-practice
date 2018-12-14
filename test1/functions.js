@@ -17,5 +17,13 @@ module.exports = {
         } else {
             return false;
         }
+    },
+    minIntegerFromString: function(string) {
+        var splits = string.split(/(\d+)/).map(Number);
+        return this.minIntegerFromArray(splits);
+    },
+    concatStringsByLength: function(arrayOfStrings, type) {
+        arrayOfStrings.sort(function(a, b){return (-type) * (a.length-b.length)});
+        return arrayOfStrings.join("");
     }
 };
